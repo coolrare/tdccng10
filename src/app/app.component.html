@@ -94,8 +94,13 @@
         <div class="widget search">
           <div class="widget-content">
             <div id="searchbox">
-              <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s">
-              <input type="button" value="搜尋" id="searchbutton">
+              <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s"
+                #tKeyword
+                [value]="keyword"
+                (keyup.escape)="doSearch('')"
+                (keyup.enter)="doSearch(tKeyword.value)">
+              <input type="button" value="搜尋" (click)="doSearch(tKeyword.value)">
+              <pre>{{ keyword }}</pre>
             </div>
           </div>
         </div>
