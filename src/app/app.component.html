@@ -9,7 +9,10 @@
       <div id="ctl00_cphBody_PostList1_posts" class="posts">
         <!-- Article START-->
         <!-- <pre>{{ data | json }}</pre> -->
-        <pre>${{ 12345 | number }}</pre>
+        <!-- <pre>${{ 12345 | number }}</pre> -->
+        <pre>{{ '' | gender }}</pre>
+        <pre>{{ 'M' | gender }}</pre>
+        <pre>{{ 'F' | gender }}</pre>
         <article class="post" id="post{{i}}"
                  *ngFor="let item of data; let i=index">
           <header class="post-header">

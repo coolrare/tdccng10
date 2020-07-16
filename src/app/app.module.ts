@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MaskPipe } from './mask.pipe';
+import { GenderPipe } from './gender.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MaskPipe
+    MaskPipe,
+    GenderPipe
   ],
   imports: [
     BrowserModule,
