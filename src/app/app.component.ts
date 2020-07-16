@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   keyword = 'TEST';
 
-  data: any[];
+  data: Article[];
 
   constructor(private datasvc: DataService) {
     this.data = datasvc.data;
@@ -19,4 +19,17 @@ export class AppComponent {
   doSearch(value: string): void {
     this.keyword = value;
   }
+}
+
+
+
+export interface Article {
+  id: number;
+  href: string;
+  title: string;
+  date: string;
+  author: string;
+  category: string;
+  'category-link': string;
+  summary: string;
 }
