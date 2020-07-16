@@ -1,5 +1,6 @@
 import { DataService } from './data.service';
 import { Component } from '@angular/core';
+import { Article } from './Article';
 
 @Component({
   selector: 'app-root',
@@ -19,17 +20,4 @@ export class AppComponent {
   doSearch(value: string): void {
     this.keyword = value;
   }
-}
-
-
-
-export interface Article {
-  id: number;
-  href: string;
-  title: string;
-  date: string;
-  author: string;
-  category: string;
-  'category-link': string;
-  summary: string;
 }
