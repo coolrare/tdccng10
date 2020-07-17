@@ -1,5 +1,5 @@
 import { DataService } from './data.service';
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Article } from './Article';
 
 @Component({
@@ -7,16 +7,22 @@ import { Article } from './Article';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
   keyword = 'TEST';
 
   data: Article[];
 
-  constructor(private datasvc: DataService) {
-    datasvc.load()
+  constructor(private datasvc: DataService) { }
+
+  ngOnInit(): void {
+    this.datasvc.load()
       .subscribe(result => {
         this.data = result;
       });
+  }
+
+  ngOnDestroy(): void {
+    // Called once, before the instance is destroyed.
   }
 
   // TEST
