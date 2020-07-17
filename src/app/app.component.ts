@@ -13,7 +13,10 @@ export class AppComponent {
   data: Article[];
 
   constructor(private datasvc: DataService) {
-    this.data = datasvc.data;
+    datasvc.load()
+      .subscribe(result => {
+        this.data = result;
+      });
   }
 
   // TEST
