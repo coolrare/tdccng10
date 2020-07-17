@@ -14,7 +14,10 @@
         <pre>{{ 'M' | gender }}</pre>
         <pre>{{ 'F' | gender }}</pre>
 
-        <app-article [item]="item" *ngFor="let item of data; let i=index"></app-article>
+        <app-article *ngFor="let item of data; let i=index"
+                    [item]="item"
+                    [i]="i" >
+        </app-article>
 
         <!-- Article END-->
       </div>
